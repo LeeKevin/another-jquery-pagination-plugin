@@ -1,7 +1,15 @@
 <head>
     <title>another-jquery-pagination-plugin demo</title>
-    <script src="https://code.jquery.com/jquery-1.8.0.min.js" />
-    <script src="jquery.pagination.js" />
+    <script src="https://code.jquery.com/jquery-1.8.0.min.js"></script>
+    <script src="jquery.pagination.js"></script>
+    <script src="style.css"></script>
+    <script>
+        $( document ).ready(function() {
+            $('#short-list').find('ul').paginate({
+                itemsPerPage: 10
+            });
+        });
+    </script>
 </head>
 
 <body>
