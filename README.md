@@ -30,9 +30,11 @@ Ta *da*!
 ## Options
 
 `itemsPerPage`
+
 The number of items to display on each page; default: `25`.
 
 `paginationAttrs`
+
 The element attributes for the created pagination div; default:
 ```javascript
 {
@@ -41,39 +43,50 @@ The element attributes for the created pagination div; default:
 ```
 
 `paginationContainer` 
+
 Specified HTML element to which to append the pagination div; default: `this.parent()`
 
 `pageLinkClass`
-Class for the page links; default: `’pagination’`
+
+Class for the page links; default: `'pagination'`
 
 `activeLinkClass`
-Class for the link of the current page; default: `’active’`
+
+Class for the link of the current page; default: `'active'`
 
 `disabledLinkClass`
-Class for the any disabled page links; default: `’very_faded’`
+
+Class for the any disabled page links; default: `'very_faded'`
 
 `initialPage`
+
 A number for the page to be loaded when the item list and pagination are rendered. This is good for when you want to update values in the list, but maintain the page for the user; default: `1`
 
 `pageLinksDisplayed`
+
 Boolean to show the numbered page links (will display 5); default: `true`
 
 `nextPrevDisplayed`
+
 Boolean to show the next/previous page links; default: `true`
 
 `firstLastDisplayed`
+
 Boolean to show the page links to navigate to the first/last pages; default: `true`
 
 `pageInfoDisplayed`
+
 Boolean to show the page info span (i.e. Page: X of X); default: `true`
 
 `beforePageClick`
+
 Callback function to be executed immediately before any pre-defined behaviour when a page link is clicked; default:
 ```javascript
 function (event) {}
 ```
 
 `afterPageClick`
+
 Callback function to be executed after the page is loaded when a page link is clicked; default:
 ```javascript
 function (event) {}
