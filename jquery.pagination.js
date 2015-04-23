@@ -1,4 +1,4 @@
-(function() {
+(function($) {
 
     $.fn.paginate.defaults = {
             itemsPerPage: '25', //number of items to show per page
@@ -19,7 +19,23 @@
     };
   
     $.fn.paginate = function (options) {
-        var settings = $.extend({}, $.fn.paginate.defaults, options);
+        var settings = $.extend({
+            itemsPerPage: '25', //number of items to show per page
+            paginationAttrs: { //attributes to attach to the created pagination div
+                class: 'pagination'
+            },
+            paginationContainer: this.parent(), //the container to which the pagination div is appended
+            pageLinkClass: 'pagination', //class for the page links
+            activeLinkClass: 'active', //class for the current page link
+            disabledLinkClass: 'very_faded', //class for disabled page links
+            pageLinksDisplayed: true, //boolean to show numbered page links
+            nextPrevDisplayed: true, // boolean to show next/prev page links
+            firstLastDisplayed: true, // boolean to show go to first/last page links
+            pageInfoDisplayed: true, //boolean to show page info span
+            initialPage: 1, //page number to load initially
+            beforePageClick: function (event) {}, //callback to be executed before a page link is clicked
+            afterPageClick: function (event) {} //callback to be executed after a page link is clicked
+        }, options);
 
         var items = this.children();
         var itemCount = items.length;
@@ -117,4 +133,4 @@
         }
     }
 
-})();
+})(jQuery);
