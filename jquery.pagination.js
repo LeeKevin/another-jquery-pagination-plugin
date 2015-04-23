@@ -2,7 +2,7 @@
 
     $.fn.paginate = function (options) {
         var settings = $.extend({
-            itemsPerPage: '10', //number of items to show per page
+            itemsPerPage: '25', //number of items to show per page
             paginationAttrs: { //attributes to attach to the created pagination div
                 class: 'pagination'
             },

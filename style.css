@@ -1,3 +1,56 @@
+.content:first-child {
+    border: 1px #666 solid;
+}
+
 ul {
     list-style-type: none;
+}
+
+li {
+    margin: .5em 0;
+}
+
+.content {
+    margin: 3em auto;
+    width: 390px;
+}
+
+div.pagination:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+
+.pagination li {
+    float: left;
+}
+
+.pagination li a {
+    color: blue;
+    cursor: pointer;
+}
+
+.pagination li a:hover {
+    background: #EEE;
+}
+
+.pagination span, .pagination li a {
+    border: 1px #666 solid;
+    padding: 3px;
+    margin: 0 3px;
+}
+
+.pagination li a.active {
+    cursor: default;
+    color: #000000;
+    background-color: #EEE;
+}
+
+.pagination li a.very_faded {
+    cursor: default;
+    color: #CCC;
+    border-color: #EEE;
 }
