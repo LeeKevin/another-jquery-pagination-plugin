@@ -1,0 +1,150 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>another-jquery-pagination-plugin by LeeKevin</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>another-jquery-pagination-plugin</h1>
+        <p></p>
+
+        <p class="view"><a href="https://github.com/LeeKevin/another-jquery-pagination-plugin">View the Project on GitHub <small>LeeKevin/another-jquery-pagination-plugin</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/LeeKevin/another-jquery-pagination-plugin/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/LeeKevin/another-jquery-pagination-plugin/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/LeeKevin/another-jquery-pagination-plugin">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="another-jquery-pagination-plugin" class="anchor" href="#another-jquery-pagination-plugin" aria-hidden="true"><span class="octicon octicon-link"></span></a>another-jquery-pagination-plugin</h1>
+
+<p>Another jQuery pagination plugin (aren't these a joy?).</p>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>Include script <em>after</em> the jQuery library (unless you are packaging scripts somehow else):</p>
+
+<div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>/path/to/jquery.pagination.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</pre></div>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<div class="highlight highlight-javascript"><pre>$(<span class="pl-s"><span class="pl-pds">'</span>jQuery collection of items<span class="pl-pds">'</span></span>).paginate();</pre></div>
+
+<p>Example with options:</p>
+
+<div class="highlight highlight-javascript"><pre>$(<span class="pl-s"><span class="pl-pds">'</span>jQuery collection of items<span class="pl-pds">'</span></span>).paginate({
+    paginationContainer<span class="pl-k">:</span> $(<span class="pl-s"><span class="pl-pds">'</span>someContainer’),</span>
+<span class="pl-s">    itemsPerPage: 10</span>
+<span class="pl-s">});</span></pre></div>
+
+<p>Ta <em>da</em>!</p>
+
+<h2>
+<a id="options" class="anchor" href="#options" aria-hidden="true"><span class="octicon octicon-link"></span></a>Options</h2>
+
+<ul>
+<li>
+<p><code>itemsPerPage</code></p>
+
+<p>The number of items to display on each page; default: <code>25</code>.</p>
+</li>
+<li>
+<p><code>paginationAttrs</code></p>
+
+<p>The element attributes for the created pagination div; default:</p>
+</li>
+</ul>
+
+<div class="highlight highlight-javascript"><pre>{
+    class<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>pagination<span class="pl-pds">'</span></span>
+}</pre></div>
+
+<ul>
+<li>
+<p><code>paginationContainer</code> </p>
+
+<p>Specified HTML element to which to append the pagination div; default: <code>this.parent()</code></p>
+</li>
+<li>
+<p><code>pageLinkClass</code></p>
+
+<p>Class for the page links; default: <code>'pagination'</code></p>
+</li>
+<li>
+<p><code>activeLinkClass</code></p>
+
+<p>Class for the link of the current page; default: <code>'active'</code></p>
+</li>
+<li>
+<p><code>disabledLinkClass</code></p>
+
+<p>Class for the any disabled page links; default: <code>'very_faded'</code></p>
+</li>
+<li>
+<p><code>initialPage</code></p>
+
+<p>A number for the page to be loaded when the item list and pagination are rendered. This is good for when you want to update values in the list, but maintain the page for the user; default: <code>1</code></p>
+</li>
+<li>
+<p><code>pageLinksDisplayed</code></p>
+
+<p>Boolean to show the numbered page links (will display 5); default: <code>true</code></p>
+</li>
+<li>
+<p><code>nextPrevDisplayed</code></p>
+
+<p>Boolean to show the next/previous page links; default: <code>true</code></p>
+</li>
+<li>
+<p><code>firstLastDisplayed</code></p>
+
+<p>Boolean to show the page links to navigate to the first/last pages; default: <code>true</code></p>
+</li>
+<li>
+<p><code>pageInfoDisplayed</code></p>
+
+<p>Boolean to show the page info span (i.e. Page: X of X); default: <code>true</code></p>
+</li>
+<li>
+<p><code>beforePageClick</code></p>
+
+<p>Callback function to be executed immediately before any pre-defined behaviour when a page link is clicked; default:</p>
+</li>
+</ul>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-k">function</span> (<span class="pl-smi">event</span>) {}</pre></div>
+
+<ul>
+<li>
+<p><code>afterPageClick</code></p>
+
+<p>Callback function to be executed after the page is loaded when a page link is clicked; default:</p>
+</li>
+</ul>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-k">function</span> (<span class="pl-smi">event</span>) {}</pre></div>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/LeeKevin">LeeKevin</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
