@@ -91,3 +91,7 @@ function (event) {}
 ```javascript
 function (event) {}
 ```
+
+## Demo
+
+[Ugly demo](http://leekevin.github.io/another-jquery-pagination-plugin/)
