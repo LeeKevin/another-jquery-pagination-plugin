@@ -9,10 +9,11 @@
             pageLinkClass: 'pagination', //class for the page links
             activeLinkClass: 'active', //class for the current page link
             disabledLinkClass: 'very_faded', //class for disabled page links
-            pageLinksDisplayed: true,
-            nextPrevDisplayed: true,
-            firstLastDisplayed: true,
-            pageInfoDisplayed: true,
+            pageLinksDisplayed: true, //boolean to show numbered page links
+            nextPrevDisplayed: true, // boolean to show next/prev page links
+            firstLastDisplayed: true, // boolean to show go to first/last page links
+            pageInfoDisplayed: true, //boolean to show page info span
+            initialPage: 1, //page number to load initially
             beforePageClick: function (event) {}, //callback to be executed before a page link is clicked
             afterPageClick: function (event) {} //callback to be executed after a page link is clicked
     };
@@ -33,18 +34,17 @@
             .append(linklist);
 
         //initialize the first page
-        loadTable(1);
-        loadLinks(1);
+        loadTable(settings.initialPage);
 
         function loadTable(currentPage) {
             var start = Math.max(0, settings.itemsPerPage * (currentPage - 1));
             var end = Math.min(settings.itemsPerPage * currentPage, itemCount);
             items.hide().slice(start, end).show();
+            loadLinks(currentPage);
         }
 
         function loadLinks(currentPage) {
             linklist.find('a').unbind();
-
 
             var links = [];
 
@@ -101,8 +101,7 @@
             if (settings.firstLastDisplayed) links.push(lastPageLink);
 
             linklist.html('');
-            var link;
-            for (link in links) {
+            for (var link in links) {
                 $("<li />").append(links[link]).appendTo(linklist);
                 links[link].bind('click', function (event) {
                     event.preventDefault();
@@ -110,12 +109,11 @@
 
                     var page = Number($(this).attr('data-page'));
                     loadTable(page);
-                    loadLinks(page);
 
                     settings.afterPageClick.call(event);
                 });
             }
-            $("<li />").append("<span>Page: " + currentPage + " of " + pageCount + "</span>").appendTo(linklist);
+            if (settings.pageInfoDisplayed) $("<li />").append("<span>Page: " + currentPage + " of " + pageCount + "</span>").appendTo(linklist);
         }
     }
 
