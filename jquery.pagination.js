@@ -15,15 +15,16 @@
             firstLastDisplayed: true, // boolean to show go to first/last page links
             pageInfoDisplayed: true, //boolean to show page info span
             initialPage: 1, //page number to load initially
+            childrenSelector: '', //selector for items to paginate
             beforePageClick: function (event) {}, //callback to be executed before a page link is clicked
             afterPageClick: function (event) {} //callback to be executed after a page link is clicked
         }, options);
 
-        var items = this.children();
+        var items = this.children(settings.childrenSelector);
         var itemCount = items.length;
         var pageCount = Math.ceil(itemCount / settings.itemsPerPage);
 
-        if (pageCount == 1) return;
+        if (itemCount == 0 || pageCount == 1) return;
 
         var linklist = $("<ul />");
         $("<div />")
