@@ -78,6 +78,10 @@ Ta *da*!
 
    Boolean to show the page info span (i.e. Page: X of X); default: `true`
 
+- `childrenSelector`
+
+   Common selector of the child items to paginate; default: `''`
+
 - `beforePageClick`
 
    Callback function to be executed immediately before any pre-defined behaviour when a page link is clicked; default:
